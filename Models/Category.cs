@@ -13,5 +13,14 @@ namespace MyApi.Models
 
         [BsonElement("name")]
         public string Name { get; set; } = null!;
+
+        [BsonElement("createdAt")]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        [BsonElement("updatedAt")]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
+
     }
 }

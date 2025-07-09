@@ -36,3 +36,4 @@ C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MongoDB.Driver.dll
 C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\SharpCompress.dll
 C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\Snappier.dll
 C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\ZstdSharp.dll
+C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.sourcelink.json

@@ -24,12 +24,14 @@ namespace MyApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] Category category)
         {
+            category.CreatedAt = DateTime.Now;
+            category.UpdatedAt = DateTime.Now;
             await _categoryService.CreateCategoryAsync(category);
-            return CreatedAtAction("GetById", new { id = category.Id }, category);
+            return CreatedAtAction("GetCategoryById", new { id = category.Id }, category);
         }
 
         [HttpGet("{id:length(24)}")]
-        public async Task<IActionResult> GetById(string id)
+        public async Task<IActionResult> GetCategoryById(string id)
         {
             var category = await _categoryService.GetCategoryByIdAsync(id);
             if (category == null)
@@ -42,6 +44,7 @@ namespace MyApi.Controllers
         [HttpPut("{id:length(24)}")]
         public async Task<IActionResult> UpdateCategory(string id, [FromBody] Category updatedCategory)
         {
+            updatedCategory.UpdatedAt = DateTime.Now;
             var existingCategory = await _categoryService.GetCategoryByIdAsync(id);
             if (existingCategory == null)
                 return NotFound();
@@ -52,7 +55,7 @@ namespace MyApi.Controllers
             if (!result)
                 return StatusCode(500, "Failed to update category");
 
-            return Ok(updatedCategory); 
+            return Ok(updatedCategory);
         }
 
 
