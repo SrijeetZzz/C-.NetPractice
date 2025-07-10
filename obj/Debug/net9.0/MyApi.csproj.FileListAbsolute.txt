@@ -6,8 +6,14 @@ C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MyApi.deps.json
 C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MyApi.runtimeconfig.json
 C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MyApi.dll
 C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MyApi.pdb
+C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\DnsClient.dll
 C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MongoDB.Bson.dll
+C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MongoDB.Driver.dll
+C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\SharpCompress.dll
+C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\Snappier.dll
+C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\ZstdSharp.dll
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.csproj.AssemblyReference.cache
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\rpswa.dswa.cache.json
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.GeneratedMSBuildEditorConfig.editorconfig
@@ -16,6 +22,7 @@ C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.AssemblyInfo.cs
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.csproj.CoreCompileInputs.cache
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.sourcelink.json
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
@@ -30,10 +37,3 @@ C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\refint\MyApi.dll
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.pdb
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.genruntimeconfig.cache
 C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\ref\MyApi.dll
-C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\DnsClient.dll
-C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MongoDB.Bson.dll
-C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\MongoDB.Driver.dll
-C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\SharpCompress.dll
-C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\Snappier.dll
-C:\Users\CT_USER\Desktop\MyApi\bin\Debug\net9.0\ZstdSharp.dll
-C:\Users\CT_USER\Desktop\MyApi\obj\Debug\net9.0\MyApi.sourcelink.json

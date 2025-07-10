@@ -33,6 +33,7 @@ builder.Services.Configure<MongoDBSettings>(
 
 // Register services
 builder.Services.AddSingleton<CategoryService>();
+builder.Services.AddSingleton<SubCategoryService>();
 
 // Add CORS policy
 builder.Services.AddCors(options =>

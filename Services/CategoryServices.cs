@@ -40,5 +40,7 @@ namespace MyApi.Services
             var result = await _categoryCollection.DeleteOneAsync(c => c.Id == id);
             return result.DeletedCount > 0;
         }
+        public async Task<Category> GetCategoryByNameAsync(string name) =>
+            await _categoryCollection.Find(c => c.Name == name).FirstOrDefaultAsync();
     }
 }

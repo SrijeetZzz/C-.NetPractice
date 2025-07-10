@@ -17,5 +17,7 @@ namespace MyApi.Models
         // public string UserCollectionName { get; set; } = null!;
         public string CategoryCollectionName { get; set; } = null!;
 
+        public string SubCategoryCollectionName { get; set; } = null!;
+
     }
 }
