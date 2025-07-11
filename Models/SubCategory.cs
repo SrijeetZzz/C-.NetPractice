@@ -17,7 +17,7 @@ namespace MyApi.Models
         public string? CategoryId { get; set; }
 
         [BsonElement("subName")]
-        public string? SubName { get; set; } = null!;
+        public string SubName { get; set; } = null!;
 
         [BsonElement("createdAt")]
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]

@@ -20,7 +20,7 @@ namespace MyApi.Controllers
         public async Task<IActionResult> CreateSubCategory([FromBody] SubCategory subcategory)
         {
             if (string.IsNullOrWhiteSpace(subcategory.SubName))
-                return BadRequest("SubName and CategoryId are required.");
+                return BadRequest("SubName is required.");
 
             var existing = await _subCategoryService.GetByCategoryIdAndSubNameAsync(
                 subcategory.CategoryId, subcategory.SubName);
@@ -42,11 +42,32 @@ namespace MyApi.Controllers
             return Ok(subcategory);
         }
         [HttpGet("with-category")]
-        public async Task<IActionResult> GetWithCategoryNames()
+        public async Task<IActionResult> GetWithCategoryNames([FromQuery] int page, [FromQuery] int pageSize)
         {
-            var result = await _subCategoryService.GetAllWithCategoryNamesAsync();
-            return Ok(result);
+            int skip = (page - 1) * pageSize;
+            var data = await _subCategoryService.GetAllWithCategoryNamesAsync(skip, pageSize);
+            var totalCount = await _subCategoryService.GetTotalCountAsync();
+
+            return Ok(new
+            {
+                data,
+                totalCount
+            });
         }
+        [HttpGet("with-categoryName")]
+        public async Task<IActionResult> GetCategoryNamesWithLabels([FromQuery] int page, [FromQuery] int pageSize)
+        {
+            int skip = (page - 1) * pageSize;
+            var data = await _subCategoryService.GetAllCategoryNamesWithLabels(skip, pageSize);
+            var totalCount = await _subCategoryService.GetTotalCountAsync();
+
+            return Ok(new
+            {
+                data,
+                totalCount
+            });
+        }
+
 
     }
 }
