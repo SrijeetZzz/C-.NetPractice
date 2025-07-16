@@ -23,14 +23,14 @@ namespace MyApi.Services
         public async Task<List<SubUserModel>> GetUsersAsync() =>
             await _subUserCollection.Find(_ => true).ToListAsync();
         public async Task<SubUserModel?> GetByIdAsync(string id)
-{
-    var objectId = new ObjectId(id); // Convert to ObjectId
-    return await _subUserCollection.Find(sb => sb.Id == objectId.ToString()).FirstOrDefaultAsync();
-}
+        {
+                var objectId = new ObjectId(id);
+                return await _subUserCollection.Find(sb => sb.Id == objectId.ToString()).FirstOrDefaultAsync();
+        }
         public async Task<List<SubUsersList>> GetAllUsersUnderAdminAsync(int skip, int pageSize, string searchTerm)
         {
-            var pipeline = new List<BsonDocument>();
-
+            var pipeline = new List<BsonDocument>();      
+               
             pipeline.Add(new BsonDocument("$lookup",
                 new BsonDocument
                 {
@@ -54,14 +54,14 @@ namespace MyApi.Services
                 var regex = new BsonRegularExpression(pattern, "i");
 
                 var orConditions = new BsonArray
-        {
-            new BsonDocument("subUserName", regex),
-            new BsonDocument("subUserEmail", regex),
-            new BsonDocument("subUserPhoneNo", regex),
-            new BsonDocument("UsersList.name", regex),
-            new BsonDocument("UsersList.email", regex),
-            new BsonDocument("UsersList.phoneNo", regex),
-        };
+                {
+                    new BsonDocument("subUserName", regex),
+                    new BsonDocument("subUserEmail", regex),
+                    new BsonDocument("subUserPhoneNo", regex),
+                    new BsonDocument("UsersList.name", regex),
+                    new BsonDocument("UsersList.email", regex),
+                    new BsonDocument("UsersList.phoneNo", regex),
+                };
 
                 pipeline.Add(new BsonDocument("$match", new BsonDocument("$or", orConditions)));
             }
@@ -75,7 +75,17 @@ namespace MyApi.Services
             { "adminName", "$UsersList.name" },
             { "adminEmail", "$UsersList.email" },
             { "adminPhone", "$UsersList.phoneNo" },
+            // { "adminId",  "$UsersList._id"}
                 }));
+                // pipeline.Add(new BsonDocument("$match",
+                // new BsonDocument("$expr",
+                // new BsonDocument("$eq",
+                // new BsonArray
+                //     {
+                //         "$userId",
+                //         "$adminId"
+                //     }))));
+            
 
             pipeline.Add(new BsonDocument("$skip", skip));
             pipeline.Add(new BsonDocument("$limit", pageSize));
@@ -125,14 +135,14 @@ namespace MyApi.Services
                 var regex = new BsonRegularExpression(pattern, "i");
 
                 var orConditions = new BsonArray
-        {
-            new BsonDocument("subUserName", regex),
-            new BsonDocument("subUserEmail", regex),
-            new BsonDocument("subUserPhoneNo", regex),
-            new BsonDocument("UsersList.name", regex),
-            new BsonDocument("UsersList.email", regex),
-            new BsonDocument("UsersList.phoneNo", regex),
-        };
+            {
+                new BsonDocument("subUserName", regex),
+                new BsonDocument("subUserEmail", regex),
+                new BsonDocument("subUserPhoneNo", regex),
+                new BsonDocument("UsersList.name", regex),
+                new BsonDocument("UsersList.email", regex),
+                new BsonDocument("UsersList.phoneNo", regex),
+            };
 
                 pipeline.Add(new BsonDocument("$match", new BsonDocument("$or", orConditions)));
             }
