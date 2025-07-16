@@ -16,7 +16,7 @@ namespace MyApi.Models
         [BsonElement("email")]
         public string Email { get; set; } = null!;
 
-        [BsonElement("phone_no")]
+        [BsonElement("phoneNo")]
         public string? PhoneNo { get; set; } = null!;
 
         [BsonElement("password")]

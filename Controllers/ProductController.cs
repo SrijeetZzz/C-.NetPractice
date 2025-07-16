@@ -58,7 +58,7 @@
 //         [HttpGet("{id:length(24)}")]
 //         public async Task<IActionResult> GetById(string id)
 //         {
-//             var product = await _service.GetAsync(id);
+//             var product = await _service.GetAsyncById(id);
 //             if (product == null)
 //                 return NotFound();
 
@@ -71,5 +71,26 @@
 //             await _service.CreateAsync(product);
 //             return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
 //         }
+//         [HttpPut("{id:length(24)}")]
+//         public async Task<IActionResult> UpdateProduct(string id, [FromBody] Product product)
+//         {
+//             var existingProduct = await _service.GetAsyncById(id);
+//             if (existingProduct == null)
+//             {
+//                 return NotFound();
+//             }
+//             product.Id = id;
+//             var result = await _service.UpdateProductAsync(id, product);
+//             if (!result)
+//                 return StatusCode(500, "Failed to update Category");
+//             return Ok(product);
+//         }
+//         [HttpDelete("{id:length(24)}")]
+//         public async Task<IActionResult> DeleteProduct(string id)
+//         {
+//             var result = await _service.DeleteCategoryAsync(id);
+//             return result ? Ok() : NotFound();
+//         }
+
 //     }
 // }
